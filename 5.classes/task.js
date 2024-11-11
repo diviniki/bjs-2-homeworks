@@ -93,12 +93,14 @@ class Library {
 
 	giveBookByName(bookName) {
 		let ind = 0;
+		const thisBook = this.books.find(item => item["name"] == bookName); 
 		ind = this.books.indexOf(this.books.find(item => item["name"] == bookName));
 		if (ind != -1) {
             console.log(bookName);
 			this.books.splice(ind, 1)[0];
+			return thisBook;
 		} else {
-			console.log(null);
+			return null;
 		}
 	}
 }
